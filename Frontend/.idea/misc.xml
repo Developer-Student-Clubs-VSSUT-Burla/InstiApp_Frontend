@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Frontend/app/src/main/res/drawable/gradient.xml" value="0.15" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/activity_splash.xml" value="0.2427536231884058" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/drawer_header.xml" value="0.25" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/fragment_event.xml" value="0.25" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/fragment_feed.xml" value="0.11955420466058764" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/fragment_home.xml" value="0.2441123188405797" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/fragment_profile.xml" value="0.12158054711246201" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/fragment_project.xml" value="0.25" />
+        <entry key="..\:/Frontend/app/src/main/res/layout/fragment_splash.xml" value="0.1" />
+        <entry key="..\:/Frontend/app/src/main/res/menu/drawer_menu.xml" value="0.16296296296296298" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
