@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/projectFragment"
     android:background="@color/bgwhite"
-    tools:context=".EventFragment">
+    tools:context=".ProjectFragment">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -35,9 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_back"
+                tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="127dp"
-                tools:layout_editor_absoluteY="127dp"
-                tools:ignore="MissingConstraints" />
+                tools:layout_editor_absoluteY="127dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -51,13 +51,17 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PROJECT PAGE"
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleviewproject"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
