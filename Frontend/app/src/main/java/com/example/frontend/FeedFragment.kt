@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.findNavController
 
 import com.example.frontend.databinding.FragmentFeedBinding
+import kotlinx.android.synthetic.main.fragment_feed.*
 
 
 private var _binding: FragmentFeedBinding? =null
