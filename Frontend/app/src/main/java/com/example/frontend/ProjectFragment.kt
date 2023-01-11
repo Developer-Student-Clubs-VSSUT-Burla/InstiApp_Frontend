@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.frontend.databinding.FragmentFeedBinding
 import com.example.frontend.databinding.FragmentProfileBinding
 import com.example.frontend.databinding.FragmentProjectBinding
+import com.example.frontend.retrofit.ApiClient
 import kotlinx.android.synthetic.main.fragment_project.*
 import retrofit2.HttpException
 import java.io.IOException
