@@ -1,11 +1,15 @@
 package com.example.frontend
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +17,8 @@ import com.example.frontend.databinding.FragmentFeedBinding
 import com.example.frontend.databinding.FragmentProfileBinding
 import com.example.frontend.databinding.FragmentProjectBinding
 import kotlinx.android.synthetic.main.fragment_project.*
+import retrofit2.HttpException
+import java.io.IOException
 
 private var _binding: FragmentProjectBinding? =null
 private val binding get() = _binding!!
@@ -30,8 +36,35 @@ class ProjectFragment : Fragment() {
         _binding = FragmentProjectBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        adapter = ProjectAdapter()
-        binding.recycleviewproject.adapter = adapter
+
+        lifecycleScope.launchWhenCreated {
+            val response = try {
+                ApiClient.userService.getPosts()
+            }catch (e: IOException){
+                Log.e(TAG,"IOException, you might not have Internet Connection")
+                Toast.makeText(activity,"IOException, you might not have Internet Connection", Toast.LENGTH_LONG).show()
+                return@launchWhenCreated
+            }catch (e: HttpException){
+                Log.e(TAG,"HttpException,unexpected response")
+                Toast.makeText(activity,"HttpException,unexpected response", Toast.LENGTH_LONG).show()
+                return@launchWhenCreated
+            }
+            if(response.isSuccessful && response.body()!=null){
+                Log.d("Response_List",response.body()!![0].name)
+
+                binding.recycleviewproject.apply {
+                    adapter = ProjectAdapter(response.body()!!)
+                    binding.recycleviewproject.adapter = adapter
+                    //layoutManager = LinearLayoutManager(context)
+                }
+            }
+            else{
+                Log.e(TAG,"Response Not Successful")
+            }
+        }
+
+
+
 
 
         binding.back2.setOnClickListener {
@@ -46,12 +79,5 @@ class ProjectFragment : Fragment() {
         binding.recycleviewproject.layoutManager = LinearLayoutManager(activity)
     }
 
-    fun sfn(view: View) {
-        val i = Intent(Intent.ACTION_SEND)
-        i.type = "text/plain"
-        i.putExtra(Intent.EXTRA_TEXT, "Read latest news on $currentUrl")
-        val chooser = Intent.createChooser(i, "Share the news link with")
-        startActivity(chooser)
-    }
 
 }
