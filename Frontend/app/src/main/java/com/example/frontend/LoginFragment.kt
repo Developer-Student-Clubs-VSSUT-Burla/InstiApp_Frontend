@@ -29,13 +29,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.upload.setOnClickListener {
-            if (binding.EmailInput.text.toString().isNotEmpty() && binding.PasswordInput.text.toString().isNotEmpty())
-            {
-                findNavController().navigate(R.id.action_loginFragment_to_feedFragment)
-            }
-            else {
-                Toast.makeText(activity, "Enter all the fields", Toast.LENGTH_SHORT).show()
-            }
+            findNavController().navigate(R.id.action_loginFragment_to_feedFragment)
         }
         return view
     }
