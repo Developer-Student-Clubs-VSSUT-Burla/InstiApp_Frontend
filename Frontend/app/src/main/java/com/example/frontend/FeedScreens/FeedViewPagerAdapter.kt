@@ -1,4 +1,4 @@
-package com.example.frontend
+package com.example.frontend.FeedScreens
 
 import android.content.Context
 import android.content.res.Resources

@@ -1,70 +1,69 @@
 package com.example.frontend.FeedScreens
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frontend.R
 import com.example.frontend.databinding.FragmentAllFeedBinding
 import com.example.frontend.databinding.FragmentFeedBinding
+import com.example.frontend.retrofit.ApiClient
 import kotlinx.android.synthetic.main.fragment_all_feed.*
+import java.io.IOException
+import retrofit2.HttpException
 
 
-private var _binding: FragmentAllFeedBinding? = null
-private val binding get() = _binding!!
+const val TAG = "feedBinding"
+
+private lateinit var feedBinding: FragmentAllFeedBinding
+private val binding get() = feedBinding!!
+
 
 class AllFeedFragment : Fragment() {
 
-    private lateinit var feedRecyclerView: RecyclerView
-    private lateinit var feedArraylist: ArrayList<Feed>
-    lateinit var feedImageId: Array<String>
-    lateinit var feedTitle: Array<String>
-    lateinit var feedContributor: Array<String>
-    lateinit var feedCategory: Array<String>
-
-    private lateinit var adapter: FeedAdapter
-
-
+    private lateinit var FeedAdapter: FeedAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentAllFeedBinding.inflate(inflater, container, false)
+        feedBinding = FragmentAllFeedBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        feedImageId = arrayOf(
-            "https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090__340.jpg",
-            "https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825__340.jpg",
-            "https://cdn.pixabay.com/photo/2016/12/02/02/10/idea-1876659__340.jpg"
-        )
+        lifecycleScope.launchWhenCreated {
+            val response = try {
+                ApiClient.userService.getFeeds()
+            } catch (e: IOException) {
+                Log.e(TAG, "IOException, you might not have Internet Connection")
+                return@launchWhenCreated
+            } catch (e: HttpException) {
+                Log.e(TAG, "HttpException,unexpected response")
+                return@launchWhenCreated
+            }
+            if (response.isSuccessful && response.body() != null) {
+                FeedAdapter.feeds = response.body()!!
+                Log.d(TAG, response.body().toString())
+            } else {
+                Log.e(TAG, "Response Not Successful")
+            }
+        }
 
-        feedTitle = arrayOf("Institution App", "Web Application", "Robotics Project")
-        feedContributor = arrayOf("GDSC-VSSUT", "Enigma VSSUT", "Robotics VSSUT")
-        feedCategory = arrayOf("Software", "Software", "Hardware")
-        feedArraylist= arrayListOf<Feed>()
 
-        feedRecyclerView = binding.allFeedRecyclerView
-        feedRecyclerView.layoutManager=LinearLayoutManager(this.context)
-        feedRecyclerView.setHasFixedSize(true)
-
-        adapter=FeedAdapter(this.requireContext(),feedArraylist)
-        feedRecyclerView.adapter=adapter
-
-
-        getUserdata()
+        setUpRecyclerView()
         return view
     }
 
-    private fun getUserdata(){
-        for(i in feedImageId.indices){
-            val feeds = Feed(feedImageId[i],feedTitle[i],feedContributor[i],feedCategory[i])
-            feedArraylist.add(feeds)
-        }
+    private fun setUpRecyclerView() = binding.allFeedRecyclerView.apply {
+        FeedAdapter = FeedAdapter()
+        adapter = FeedAdapter
+        layoutManager = LinearLayoutManager(context)
+
     }
 
 }
