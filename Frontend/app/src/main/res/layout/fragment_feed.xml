@@ -42,6 +42,7 @@
                     android:textColor="#25262d"
                     android:textSize="20sp" />
 
+
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -49,6 +50,7 @@
             android:id="@+id/tabLayout"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
+            android:background="@color/bgwhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +59,7 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
             android:layout_width="409dp"
-            android:layout_height="625dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

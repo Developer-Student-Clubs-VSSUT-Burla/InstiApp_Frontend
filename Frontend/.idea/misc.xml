@@ -10,6 +10,7 @@
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/activity_home.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/drawer_header.xml" value="0.22826086956521738" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/event_item.xml" value="0.12158054711246201" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/feed_item.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/feeditem.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_all_feed.xml" value="0.22826086956521738" />
@@ -19,8 +20,10 @@
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_login.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_project.xml" value="0.22826086956521738" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_project_detail.xml" value="0.176" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_signup.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_splash.xml" value="0.22826086956521738" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/project_item.xml" value="0.24094202898550723" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/menu/drawer_menu.xml" value="0.25" />
         <entry key="..\:/Frontend/app/src/main/res/drawable/gradient.xml" value="0.15" />
         <entry key="..\:/Frontend/app/src/main/res/layout/activity_home.xml" value="0.1" />
@@ -42,12 +45,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.16666666666666666" />
-      </ProjectState>
-    </option>
   </component>
 </project>

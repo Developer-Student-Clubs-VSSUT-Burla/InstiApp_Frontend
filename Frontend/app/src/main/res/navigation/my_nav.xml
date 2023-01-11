@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_projectFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_projectDetailFragment"
+            app:destination="@id/projectDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventFragment"
@@ -85,5 +88,23 @@
         <action
             android:id="@+id/action_signupFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectDetailFragment"
+        android:name="com.example.frontend.ProjectDetailFragment"
+        android:label="fragment_project_detail"
+        tools:layout="@layout/fragment_project_detail" >
+        <argument
+            android:name="pname"
+            app:argType="string" />
+        <argument
+            android:name="pdesc"
+            app:argType="string" />
+        <argument
+            android:name="ptags"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_projectDetailFragment_to_projectFragment"
+            app:destination="@id/projectFragment" />
     </fragment>
 </navigation>
