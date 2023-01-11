@@ -7,12 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 
 import android.view.ViewGroup
-import android.view.ViewParent
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import com.example.frontend.FeedScreens.FeedViewPagerAdapter
 
 import com.example.frontend.databinding.FragmentFeedBinding
 import com.google.android.material.tabs.TabLayout

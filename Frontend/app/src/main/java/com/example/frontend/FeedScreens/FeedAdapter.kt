@@ -1,47 +1,75 @@
 package com.example.frontend.FeedScreens
 
 import android.content.Context
-import android.text.Layout
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.frontend.R
+import com.example.frontend.FeedFragmentDirections
+import com.example.frontend.databinding.FeedItemBinding
+import com.example.frontend.retrofit.Feed
+import com.example.frontend.retrofit.TeamMembers
+import kotlin.reflect.typeOf
 
-class FeedAdapter(private val context: Context, private val feedList: ArrayList<Feed>) :
-    RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
+class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
 
-    class FeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var feedImage: ImageView = itemView.findViewById(R.id.feed_image)
-        var feedtitle: TextView = itemView.findViewById(R.id.feed_title)
-        var feedcontributor: TextView = itemView.findViewById(R.id.feed_contributor)
-        var feedtype: TextView = itemView.findViewById(R.id.feed_type)
+
+    inner class FeedViewHolder(val binding: FeedItemBinding) : RecyclerView.ViewHolder(binding.root)
+
+    private val diffCallback = object : DiffUtil.ItemCallback<Feed>() {
+        override fun areItemsTheSame(oldItem: Feed, newItem: Feed): Boolean {
+            return oldItem == newItem
+        }
+
+        override fun areContentsTheSame(oldItem: Feed, newItem: Feed): Boolean {
+            return oldItem.id == newItem.id
+        }
 
     }
+    private val differ = AsyncListDiffer(this, diffCallback)
+
+    var feeds: List<Feed>
+        get() = differ.currentList
+        set(value) {
+            differ.submitList(value)
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.feed_item, parent, false
+        return FeedViewHolder(
+            FeedItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
         )
-        return FeedViewHolder(itemView)
-
     }
 
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
-        val currentItem = feedList[position]
-        holder.feedtitle.text = currentItem.feed_title
-        holder.feedcontributor.text = currentItem.contributor
-        holder.feedtype.text = currentItem.feed_type
+        holder.binding.apply {
+            val feed = feeds[position]
+//            Glide.with(context).load(feed.feed_image).into(feedImage)
+            feedTitle.text = feed.title
+            feedContributor.text = feed.contributor.name
+            feedType.text = feed.category
+            val members=TeamMembers()
 
-        Glide.with(context).load(currentItem.feedImage).into(holder.feedImage)
+            Log.d(TAG,members::class.java.typeName)
 
+            holder.itemView.setOnClickListener {
+                val action = FeedFragmentDirections.actionFeedFragmentToFeedDescriptionFragment(
+                    feed.title, feed.contributor.name, feed.description, feed.category,
+                    feed.team_members.toTypedArray()
+                )
+                Navigation.createNavigateOnClickListener(action).onClick(holder.itemView)
+            }
+
+        }
     }
 
-    override fun getItemCount(): Int {
-        return feedList.size
-    }
+    override fun getItemCount() = feeds.size
+
 
 }

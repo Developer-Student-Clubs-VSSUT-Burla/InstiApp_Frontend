@@ -1,12 +1,12 @@
-package com.example.frontend
+package com.example.frontend.retrofit
 
-import retrofit2.Retrofit
-import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    private val retrofit: Retrofit
+    private val retrofit:Retrofit
         get() {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -20,5 +20,4 @@ object ApiClient {
         }
     val userService: API
         get() = retrofit.create(API::class.java)
-
 }
