@@ -64,27 +64,31 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ename" />
 
-                <TextView
-                    android:id="@+id/edate"
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="August 17, 2022 . Burla,India"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/etime"
-                    app:layout_constraintTop_toBottomOf="@+id/eorg"
-                    app:layout_constraintVertical_bias="0.666" />
-
-                <ImageView
-                    android:id="@+id/etime"
-                    android:layout_width="22dp"
-                    android:layout_height="23dp"
                     android:layout_marginStart="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/eorg"
-                    app:layout_constraintVertical_bias="0.578"
-                    app:srcCompat="@drawable/time" />
+                    app:layout_constraintTop_toBottomOf="@+id/eorg">
+
+                    <ImageView
+                        android:id="@+id/eclock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        app:srcCompat="@drawable/ic_clock" />
+
+                    <TextView
+                        android:id="@+id/edate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:text="August 17,2002" />
+
+                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

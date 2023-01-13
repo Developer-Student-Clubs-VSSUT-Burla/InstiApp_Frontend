@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_eventFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_fragment_event_details3"
+            app:destination="@id/fragment_event_details3" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -132,5 +135,28 @@
             app:argType="string" />
         <argument android:name="feedMembers"
             app:argType="com.example.frontend.retrofit.TeamMember[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_event_details3"
+        android:name="com.example.frontend.Fragment_event_details"
+        android:label="Fragment_event_details" >
+        <argument
+            android:name="eventname"
+            app:argType="string" />
+        <argument
+            android:name="eventdesc"
+            app:argType="string" />
+        <argument
+            android:name="eventdate"
+            app:argType="string" />
+        <argument
+            android:name="eventvenue"
+            app:argType="string" />
+        <argument
+            android:name="eventpart"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragment_event_details3_to_eventFragment"
+            app:destination="@id/eventFragment" />
     </fragment>
 </navigation>
