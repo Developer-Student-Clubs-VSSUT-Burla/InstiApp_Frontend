@@ -98,7 +98,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
-        android:text="Lorem ipsum dolor sit amet consectetur. Ut in felis rhoncus velit hac proin sodales. Ultricies cursus imperdiet magna porttitor sed. Eget id aenean habitant tempus ut. Quisque vitae amet nunc pulvinar mattis auctor habitasse. Phasellus ullamcorper et parturient mattis est. Odio egestas quis at sed eget ipsum dolor erat. Eros leo in libero id tincidunt pellentesque consequat id sit. Eget tempor cursus sagittis sed maecenas suspendisse commodo aliquam sollicitudin. Amet."
+        android:text="Lorem ipsum dolor sit amet consectetur. Ut in felis rhoncus velit hac proin sodales."
         android:textAlignment="viewStart"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,27 +137,60 @@
         app:layout_constraintTop_toBottomOf="@+id/tagsD" />
 
     <TextView
+        android:id="@+id/preparedD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Contributor"
+        android:textColor="@color/Dark_blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tagsapi" />
+
+    <TextView
+        android:id="@+id/preparedapi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:text="Google Developer Student Clubs"
+        android:textAlignment="viewStart"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preparedD" />
+
+
+    <TextView
         android:id="@+id/ContributorsD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Contributors"
+        android:text="Team Members"
         android:textColor="@color/Dark_blue"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagsapi" />
+        app:layout_constraintTop_toBottomOf="@+id/preparedapi" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ContributorsD" />

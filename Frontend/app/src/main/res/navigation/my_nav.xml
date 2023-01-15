@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_projectFragment_to_projectDetailFragment"
             app:destination="@id/projectDetailFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_projectFormFragment"
+            app:destination="@id/projectFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventFragment"
@@ -112,6 +115,12 @@
         <action
             android:id="@+id/action_projectDetailFragment_to_projectFragment"
             app:destination="@id/projectFragment" />
+        <argument
+            android:name="pcontributor"
+            app:argType="string" />
+        <argument
+            android:name="pteam"
+            app:argType="com.example.frontend.TeamMember[]" />
     </fragment>
     <fragment
         android:id="@+id/feedDescriptionFragment"

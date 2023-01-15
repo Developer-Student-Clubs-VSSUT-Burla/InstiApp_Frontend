@@ -33,7 +33,7 @@ class ProjectDetailFragment : Fragment() {
         binding.tagsapi.text = args.ptags
 
         binding.recycle.apply {
-            adapter = ContributorAdapter()
+            adapter = ContributorAdapter(args.pteam.toList())
             binding.recycle.adapter = adapter
         }
 

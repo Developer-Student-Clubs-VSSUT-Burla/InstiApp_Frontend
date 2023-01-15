@@ -43,11 +43,11 @@ class ProjectFragment : Fragment() {
                 ApiClient.userService.getPosts()
             }catch (e: IOException){
                 Log.e(TAG,"IOException, you might not have Internet Connection")
-                Toast.makeText(activity,"IOException, you might not have Internet Connection", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,"You might not have Internet Connection", Toast.LENGTH_LONG).show()
                 return@launchWhenCreated
             }catch (e: HttpException){
                 Log.e(TAG,"HttpException,unexpected response")
-                Toast.makeText(activity,"HttpException,unexpected response", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,"Something went wrong", Toast.LENGTH_LONG).show()
                 return@launchWhenCreated
             }
             if(response.isSuccessful && response.body()!=null){
@@ -65,7 +65,9 @@ class ProjectFragment : Fragment() {
         }
 
 
-
+        binding.addpostbutton.setOnClickListener {
+            findNavController().navigate(R.id.action_projectFragment_to_projectFormFragment)
+        }
 
 
         binding.back2.setOnClickListener {
