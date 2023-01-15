@@ -159,4 +159,14 @@
             android:id="@+id/action_fragment_event_details3_to_eventFragment"
             app:destination="@id/eventFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_event_form"
+        android:name="com.example.frontend.Fragment_event_form"
+        android:label="fragment_event_form"
+        tools:layout="@layout/fragment_event_form" />
+    <fragment
+        android:id="@+id/projectFormFragment"
+        android:name="com.example.frontend.ProjectFormFragment"
+        android:label="fragment_project_form"
+        tools:layout="@layout/fragment_project_form" />
 </navigation>
