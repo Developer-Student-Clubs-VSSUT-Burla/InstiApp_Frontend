@@ -8,7 +8,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.frontend.databinding.ProjectItemBinding
-import com.example.frontend.ProjectModelItem
 
 
 class ProjectAdapter(var postlist : List<ProjectModelItem>) : RecyclerView.Adapter<ProjectAdapter.ViewHolder>() {
@@ -29,16 +28,16 @@ class ProjectAdapter(var postlist : List<ProjectModelItem>) : RecyclerView.Adapt
         holder.binding.apply {
             var current = postlist[position]
             holder.Name.text = current.name
-            holder.Date.text = "March 04, 2002"
+            holder.Date.text = current.post_date
             holder.Details.text = current.description
             holder.Hastags.text = current.tags
             Glide.with(holder.itemView.context).load(urlss).into(holder.image)
 
             holder.itemView.setOnClickListener {
                 val action = ProjectFragmentDirections.actionProjectFragmentToProjectDetailFragment(current.name,
-                    current.description,current.tags)
+                    current.description,current.tags,current.contributor.name,current.team_members.toTypedArray())
                 Navigation.createNavigateOnClickListener(action).onClick(holder.itemView)
-                
+
             }
         }
     }

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.frontend.databinding.FragmentProjectBinding
 import com.example.frontend.databinding.FragmentProjectDetailBinding
 
@@ -16,6 +18,7 @@ private val binding get() = _binding!!
 class ProjectDetailFragment : Fragment() {
 
     private val args: ProjectDetailFragmentArgs by navArgs()
+    lateinit var adapter: RecyclerView.Adapter<ContributorAdapter.ViewHolder>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,14 +30,23 @@ class ProjectDetailFragment : Fragment() {
 
         binding.detailsapi.text = args.pdesc
         binding.projectname.text = args.pname
-        binding.tagsD.text = args.ptags
+        binding.tagsapi.text = args.ptags
+
+        binding.recycle.apply {
+            adapter = ContributorAdapter(args.pteam.toList())
+            binding.recycle.adapter = adapter
+        }
 
         binding.back4.setOnClickListener {
             findNavController().navigate(R.id.action_projectDetailFragment_to_projectFragment)
         }
 
-
         return view
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        binding.recycle.layoutManager = LinearLayoutManager(activity)
     }
 
 

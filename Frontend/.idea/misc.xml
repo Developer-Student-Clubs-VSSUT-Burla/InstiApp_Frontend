@@ -5,22 +5,27 @@
       <map>
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.121" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/drawable-v24/ic_share.xml" value="0.144" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1395" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/drawable/ic_launcher_background.xml" value="0.121" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/drawable/ic_share.xml" value="0.144" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/activity_home.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/drawer_header.xml" value="0.22826086956521738" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/contributor_item.xml" value="0.264" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/drawer_header.xml" value="0.176" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/event_item.xml" value="0.12158054711246201" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/feed_item.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/feeditem.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_all_feed.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_event.xml" value="0.22826086956521738" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_event_details.xml" value="0.2463768115942029" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_event_form.xml" value="0.23596014492753623" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_feed.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_like_feed.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_login.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_project.xml" value="0.22826086956521738" />
-        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_project_detail.xml" value="0.176" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_project_detail.xml" value="0.16799999999999998" />
+        <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_project_form.xml" value="0.25" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_signup.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/fragment_splash.xml" value="0.22826086956521738" />
         <entry key="..\:/09Jan/InstiApp_Frontend/Frontend/app/src/main/res/layout/project_item.xml" value="0.24094202898550723" />
@@ -45,12 +50,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.13333333333333333" />
-      </ProjectState>
-    </option>
   </component>
 </project>
